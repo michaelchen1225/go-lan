@@ -6,8 +6,7 @@ import (
 )
 
 func passwordChecker(pw string) bool {
-	pwR := []rune(pw) //把密碼轉乘rune型別 , 以便接收 UTT-8 字串
-	fmt.Println(pwR)
+	pwR := []rune(pw) //把密碼轉乘rune型別 , 以便接收 UTF-8 字串
 	if len(pwR) < 8 { //若密碼長度不足8 , 等於檢查失敗
 		return false
 	}
@@ -37,5 +36,15 @@ func passwordChecker(pw string) bool {
 }
 
 func main() {
-	fmt.Println(passwordChecker("This!I5A"))
+	if passwordChecker("") {
+		fmt.Println("密碼格式良好")
+	} else {
+		fmt.Println("密碼格式不正確")
+	}
+
+	if passwordChecker("This!I5A") {
+		fmt.Println("密碼格式良好")
+	} else {
+		fmt.Println("密碼格式不正確")
+	}
 }
