@@ -45,7 +45,7 @@ func doubler(v interface{}) (string, error) {
 }
 
 func main() {
-	res := doubler(-5)
+	res, _ := doubler(-5)
 	fmt.Println("-5  :", res)
 	res, _ = doubler(5)
 	fmt.Println("5   :", res)
