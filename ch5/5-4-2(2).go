@@ -13,8 +13,8 @@ func main() {
 }
 
 func incrementor() func() int {
-	i := 0 //定義在匿名函式之父函式內的變數
-	return func() int {
+	i := 0              //定義在匿名函式之父函式內的變數
+	return func() int { //閉包 : 匿名函式包住外部變數, 且能夠記得外部變數的值
 		i++
 		return i
 	}

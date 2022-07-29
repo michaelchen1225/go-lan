@@ -1,15 +1,15 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 func main() {
-	var str interface{} = 42
-	if s, ok := str.(string); ok { //做型別斷言 , 並檢查是否轉換成功
-		fmt.Println(strconv.Atoi(s))
-	} else {
-		fmt.Println("Type assertion failed")
-	}
+	i := 1
+	num(i)       //印出1
+	defer num(i) //這時i等於1,所以最後執行時印出1,不會因為後面i++而改變
+	i++
+	num(i) //印出2
+}
+
+func num(n int) {
+	fmt.Println(n)
 }
